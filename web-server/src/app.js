@@ -48,7 +48,7 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    geocode(req.query.address, (error, {latitude, longitude, location}) => {
+    geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
         if (error) {//using shorthand instead of res.send({error: error}. when property name is same as variable name, you can use this shorthand.)
             return res.send({ error })
         }
